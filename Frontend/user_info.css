@@ -1,0 +1,236 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(Pictures/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(70px);
+}
+
+.navbar img {
+    width:150px;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+.navbar ul li a {
+   text-decoration: none;
+   color: white;    
+   text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width: 0%;
+    background: #04a6d8;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+    display: inline-block;
+}
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+.text {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    border-right: 5px solid;
+    width: 100%;
+    overflow: hidden;
+}
+button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #04a6d8;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+.print {
+    background: #04a6d8;
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 0%;
+    transition: 0.5s;
+}
+.popup {
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.popup-content{
+    height: 300px;
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+}
+.center h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+.center form {
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.txt_field label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #2691d9; 
+    transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: #2691d9, 
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+    color: #2691d9, 
+}
+
+.pass {
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+.pass:hover {
+    text-decoration: underline;
+}
+input[type="submit"] {
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background-color: #2691d9;
+    border-radius: 25px;
+    font-size: 18px;
+    color: #e9f4fb;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+input[type="submit"]:hover {
+    border-color: #2691d9;
+    transition: .5s;
+}
+
+
+.close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    box-shadow: 6px 6px 29px -4px rgba(0,0,0,0.6);
+    cursor: pointer;
+}
+
+
+button:hover span {
+    width: 100%;
+
+}
+button:hover {
+    border: none;
+}
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-contact p, 
+.footer-copyright p {
+    margin: 10px 0;
+}

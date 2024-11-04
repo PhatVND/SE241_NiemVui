@@ -1,0 +1,23 @@
+.card {
+    background-color: rgba(0, 0, 0, 0.7); /* Màu nền tối với độ trong suốt */
+    color: white; /* Màu chữ trắng */
+    border-radius: 10px; /* Bo tròn góc */
+    padding: 20px; /* Khoảng cách bên trong */
+    width: 200px; /* Độ rộng thẻ */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Đổ bóng */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Căn các mục về bên trái */
+  }
+  
+  .card p {
+    display: flex;
+    align-items: center;
+    margin: 8px 0; /* Khoảng cách giữa các dòng */
+    font-size: 14px; /* Kích thước chữ */
+  }
+  
+  .card p i {
+    margin-right: 8px; /* Khoảng cách giữa biểu tượng và chữ */
+    font-size: 16px; /* Kích thước biểu tượng */
+  }

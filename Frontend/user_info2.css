@@ -1,0 +1,170 @@
+
+body {
+    background: #f5f5f5;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    min-height: 100vh; /* Chiều cao tối thiểu là toàn bộ chiều cao màn hình */
+    flex-direction: column;
+}
+
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+.container {
+    color: white
+}
+.card.overflow-hidden {
+ color: #26B4FF;
+ font-weight: 100;
+ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.d-block.ui-w-80 {
+    border-radius: 50px;
+}
+
+/* Upload new photo */
+label.btn { 
+    margin-bottom: 0;
+    border-radius: 25px;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background  : transparent;
+    color       : #26B4FF;
+}
+.btn.btn-outline-primary {
+    border-radius: 25px;
+}
+
+.btn.btn-primary {
+    border-radius: 50px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+
+.card {
+    background-clip: padding-box;
+    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+.form-control .mb-1 {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+/* Font color of site */
+.list-group-item.list-group-item-action {
+
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+    background-color: white;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    background-color: #26B4FF;
+}
+.card-body {
+    background-color: #222;
+}
+.col-md-9 {
+    background-color: #222;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #26B4FF !important;
+}
+.col-md-3{
+    background-color:  #222;
+}
+
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #26B4FF !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+    
+}
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-contact p, 
+.footer-copyright p {
+    margin: 10px 0;
+}

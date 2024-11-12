@@ -151,7 +151,7 @@ td {
     position: relative;
     margin-top: 0vh;
     min-height: 90vh;
-    background-image: url(Pictures/Background3.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(Pictures/Background3.jpg);
     background-size: cover;
     background-position: center;
     width: 100%;

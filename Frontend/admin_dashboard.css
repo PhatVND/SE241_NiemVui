@@ -120,10 +120,55 @@ td {
     align-items: center;
     justify-content: center;
 }
+select {
+    appearance: none; /* Loại bỏ kiểu mặc định */
+    background-color: #333; /* Nền tối */
+    color: #fff; /* Chữ trắng */
+    border: 2px solid #555; /* Viền sáng hơn */
+    border-radius: 5px; /* Bo góc */
+    padding: 10px 15px; /* Khoảng cách bên trong */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer;
+    width: 90px; /* Độ rộng dropdown */
+    text-align: center; /* Căn giữa chữ */
+    text-transform: capitalize; /* Viết hoa chữ cái đầu */
+}
+
+select:hover {
+    background-color: #444; /* Đổi màu khi hover */
+}
+
+select:focus {
+    outline: none; /* Loại bỏ đường viền mặc định khi focus */
+    border-color: #888; /* Thay đổi màu viền khi focus */
+}
+
+/* Định dạng danh sách tùy chọn (trong dropdown) */
+option {
+    background-color: #333; /* Nền của từng option */
+    color: #fff; /* Chữ của option */
+    padding: 5px; /* Khoảng cách bên trong */
+}
+
+option:hover {
+    background-color: #444; /* Đổi màu nền khi hover */
+}
+
+option:checked {
+    background-color: #555; /* Đổi màu khi được chọn */
+}
+
+/* Tăng cường tính thẩm mỹ cho nút mũi tên */
+select::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+}
 .search button img {
     width: 30px;
     height: 30px;
 }
+
 .container .header .nav .user {
     flex: 1;
     display: flex;

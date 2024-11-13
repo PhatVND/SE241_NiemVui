@@ -273,10 +273,10 @@ td {
     margin-bottom: 10px;
 }
 
-/* Printer section styling */
+/* Printer section styling
 .printer-section, .page-section, .settings-section {
     margin-bottom: 20px;
-}
+} */
 
 /* Printer and setting dropdown styling */
 .printer-dropdown, .setting-option {
@@ -339,4 +339,27 @@ select {
 .footer-contact p, 
 .footer-copyright p {
     margin: 10px 0;
+}
+
+.file-upload-section{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#submitButton {
+    width: 20%;
+    padding: 10px;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50px;
+    background-color: #5c5c6090; /* Green background */
+    color: white; /* White text */
+    border: none;
+    cursor: pointer;
+
+}
+
+#submitButton:hover {
+    background-color: #465564; /* Darker green on hover */
 }

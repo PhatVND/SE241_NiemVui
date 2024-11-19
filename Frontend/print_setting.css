@@ -160,7 +160,7 @@ td {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .container .content .cards {
@@ -180,9 +180,9 @@ td {
     
 }
 .container .content .content-2 .print_setting {
-    min-height: 50vh;
-    min-width: 100vh;
-    flex: 5;
+    min-height: 30vh;
+    min-width: 50vh;
+    flex: 2;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     margin: 0 50px 50px 50px;
@@ -251,21 +251,17 @@ td {
 }
 
 .container .content .content-2 .setting-selection {
-    flex: 2;
+    flex: 1.5;
     min-height: 50vh;
-    min-width: 70vh;
+    min-width: 30vh;
     backdrop-filter: blur(10px);
     margin: 0 25px;
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     display: flex;
     flex-direction: column;
 }
 
-.setting-selection {
-    padding: 20px;
-    width: 250px;
-    border-radius: 8px;
-}
 
 /* Header styling */
 .setting-selection h3 {
@@ -347,7 +343,7 @@ select {
 }
 
 #submitButton {
-    width: 20%;
+    min-width: 20%;
     padding: 10px;
     font-size: 16px;
     display: block;

@@ -359,3 +359,72 @@ select {
 #submitButton:hover {
     background-color: #465564; /* Darker green on hover */
 }
+
+/* Styling cho phần form upload file */
+.file-upload-section {
+    width: 90%; /* Giảm chiều rộng để phù hợp hơn */
+    max-width: 300px; /* Giới hạn tối đa chiều rộng */
+    margin: 0 auto; /* Căn giữa */
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff; /* Màu nền trắng */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    text-align: center; /* Căn giữa nội dung bên trong */
+}
+
+/* Tiêu đề chọn file */
+.file-upload-section h3 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Input chọn file */
+#fileInput {
+    width: 100%; /* Chiều rộng 100% trong container */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Nút upload file */
+#uploadFileButton {
+    background-color: #007bff; /* Màu xanh */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px; /* Giảm kích thước padding */
+    font-size: 14px; /* Font chữ nhỏ hơn */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover nút upload */
+#uploadFileButton:hover {
+    background-color: #0056b3; /* Màu xanh đậm khi hover */
+}
+
+/* Trạng thái file */
+#fileStatus {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+    background-color: #eef; /* Màu nền xanh nhạt */
+    padding: 8px;
+    border-radius: 5px;
+    overflow-wrap: break-word; /* Xử lý xuống dòng khi văn bản dài */
+}
+
+/* Căn chỉnh tổng thể form */
+#uploadFileForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto; /* Căn giữa */
+}

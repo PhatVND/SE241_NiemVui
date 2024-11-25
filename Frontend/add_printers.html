@@ -12,7 +12,7 @@
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <link rel="stylesheet" href="admin_setup.css">
+    <link rel="stylesheet" href="add_printers.css">
 </head>
 
 <body>
@@ -35,13 +35,21 @@
         
 
         <div class="container">
-            <h2>Thiết Lập Số Trang In</h2>
-            <form id="defaultPageForm">
-                <label for="pageCount">Số trang in mặc định:</label>
-                <input type="number" id="pageCount" min="1" required>
-                <button type="button" onclick="submitForm()">Lưu Thiết Lập</button>
+            <h2>Thêm máy in</h2>
+            <form id="purchaseForm">
+                <label for="addNamePrinter">Nhập tên máy in</label>
+                <input type="text" id="addNamePrinter" min="1" required placeholder="H1-101">
+                <label for="printerLocation">Vị trí toà đặt</label>
+                <select id="printerLocation" required>
+                    <option value="H6">H6</option>
+                    <option value="H1">H1</option>
+                    <option value="H2">H2</option>
+                    <option value="H3">H3</option>
+                    <option value="Nhà thi đấu">Nhà thi đấu</option>
+                </select>
+                <button type="button" onclick="purchasePages()">Mua Trang</button>
             </form>
-            <p id="resultMessage"></p>
+            <p id="purchaseResultMessage"></p>
         </div>
 
 
@@ -71,7 +79,7 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
         <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-        <script src="admin_setup.js"></script>
+        <script src="buy_pages.js"></script>
 </body>
 
 </html>

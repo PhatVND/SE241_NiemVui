@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="print_setting.css" />
+    <script src="print_setting.js" defer></script>
     <title>Cài đặt In</title>
   </head>
 
@@ -60,74 +61,77 @@
               <h2>Cài đặt</h2>
             </div>
             
-            <div class="file-upload-section">
-              <h3>Chọn tệp tải lên:</h3>
-              <input type="file" id="fileInput" />
-            </div>
-
-            <div class="printer-section">
+            <form id="printForm">
+              <div class="file-upload-section">
+                <h3>Chọn tệp tải lên:</h3>
+                <input type="file" id="fileInput" name="file" />
+              </div>
+            
+              <div class="printer-section">
                 <h3>Printer</h3>
                 <div class="printer-dropdown">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Vị trí</option>
-                        <option>Trạng thái:</option>
-                    </select>
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="printer">
+                    <option value="default" selected>Chọn máy in (Mặc định)</option>
+                    <option value="location1">Vị trí 1</option>
+                    <option value="location2">Vị trí 2</option>
+                  </select>
                 </div>
-            </div>
-        
-
-            <div class="page-section">
+              </div>
+            
+              <div class="page-section">
                 <h3>Copies:</h3>
-                <input type="text" placeholder="Nhập số bản cần in" />
-            </div>
-
-            <div class="settings-section">
+                <input type="number" placeholder="Nhập số bản cần in" name="copies" value="1" />
+              </div>
+            
+              <div class="settings-section">
                 <h3>Cài đặt:</h3>
                 <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>In 2 mặt</option>
-                        <option>In 1 mặt</option>
-
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Loại giấy</option>
-                        <option>Giấy A3</option>
-                        <option>Giấy A4</option>
-
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Collated</option>
-                        <option>Collated</option>
-                        <option>Collated</option>
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Portrait Orientation</option>
-                        <option>Portrait Orientation</option>
-                        <option>Portrait Orientation</option>
-                    </select>
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="duplex">
+                    <option value="default" selected>Chọn kiểu in (Mặc định)</option>
+                    <option value="2-sided">In 2 mặt</option>
+                    <option value="1-sided">In 1 mặt</option>
+                  </select>
                 </div>
                 <div class="setting-option">
                   <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                  <select>
-                      <option>Letter</option>
-                      <option>Letter</option>
+                  <select name="paperType">
+                    <option value="default" selected>Chọn loại giấy (Mặc định)</option>
+                    <option value="A3">Giấy A3</option>
+                    <option value="A4">Giấy A4</option>
                   </select>
-              </div>
-
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="collation">
+                    <option value="default" selected>Chọn kiểu Collated (Mặc định)</option>
+                    <option value="collated">Collated</option>
+                    <option value="uncollated">Uncollated</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="orientation">
+                    <option value="default" selected>Chọn kiểu hướng giấy (Mặc định)</option>
+                    <option value="portrait">Portrait Orientation</option>
+                    <option value="landscape">Landscape Orientation</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="paperSize">
+                    <option value="default" selected>Chọn kích cỡ giấy (Mặc định)</option>
+                    <option value="letter">Letter</option>
+                    <option value="legal">Legal</option>
+                  </select>
+                </div>
+            
                 <div class="submit-section">
                   <button type="submit" id="submitButton">In</button>
                 </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>

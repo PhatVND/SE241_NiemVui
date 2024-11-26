@@ -10,3 +10,5 @@ function purchasePages() {
         purchaseResultMessage.textContent = "Vui lòng nhập số trang hợp lệ!";
     }
 }
+
+

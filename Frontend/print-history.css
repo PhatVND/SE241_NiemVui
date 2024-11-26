@@ -125,3 +125,31 @@ body {
 .inner-main .inner-content .inner-print-time .print-place i {
     margin-right: 16px;
 }
+
+.inner-main .inner-content .inner-print-time .delete-history {
+    font-family: "Freeman", sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+.inner-sort {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-sort button {
+    margin-top: 0!important;
+    margin-left: 20px;
+}
+
+.inner-sort select option {
+    color: #000;
+    background-color: #e9e5e5;
+}
+
+.inner-sort select.form-control {
+    color: #000;
+    background-color: #e9e5e5;
+}

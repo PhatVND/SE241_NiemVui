@@ -1,0 +1,50 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Print History
+  link(rel='stylesheet' href='print-history.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css' integrity='sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==' crossorigin='anonymous' referrerpolicy='no-referrer')
+  link(href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css' integrity='sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N' crossorigin='anonymous')
+.banner
+  .navbar
+    img(src='Pictures/LogoSPSS-removebg.png' alt='')
+    ul
+      li
+        a(href='index.html') Trang chủ
+      li
+        a(href='index.html') Dịch vụ
+      li
+        a(href='admin_manage_printer.html') Các máy in
+      li
+        a(href='#') Liên hệ
+      li
+        a(href='#') Home
+      li#account
+        a(href='#')
+          i.bx.bx-user
+  .container
+    h2 Mua Thêm Số Trang In
+    form#purchaseForm
+      label(for='purchasePageCount') Số trang muốn mua:
+      input#purchasePageCount(type='number' min='1' required='')
+      button(type='button' onclick='purchasePages()') Mua Trang
+    p#purchaseResultMessage
+  footer.footer
+    .footer-logo
+      img(src='Pictures/01_logobachkhoatoi.png' alt='Logo') 
+    //-   Chỉnh lại đường dẫn nếu lỗi backgound
+    .footer-contact
+      p
+        | Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+      p
+        | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình Dương
+      p Email: contact@website.com
+      p Điện thoại: +84 123 456 789
+    .footer-copyright
+      p &copy; Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+  script(src='https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js' integrity='sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj' crossorigin='anonymous')
+  script(src='https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js' integrity='sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct' crossorigin='anonymous')
+  script(src='print-history.js')
+  script(src='https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js')

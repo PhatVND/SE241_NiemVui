@@ -158,20 +158,29 @@ html(lang="en")
                       button#submitButton(type="submit") In
               div(class="print_setting")
                 .title
-                    h2#file-name REPORT.PDF
+                  h2 REPORT.PDF
                 .page-preview
-                  canvas#pdf-renderer
-                .page_control
-                  button#prev prev
-                  span.page-number 1 of 1
-                  button#next next
-  footer.footer
-    div.footer-logo
-      img(src="/image/01_logobachkhoatoi.png", alt="Logo")
-    div.footer-contact
-      p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
-      p Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình Dương
-      p Email: contact@website.com
-      p Điện thoại: +84 123 456 789
-    div.footer-copyright
-      p &copy; Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+                  h2 REPORT.PDF
+                  img(
+                    alt="" 
+                    src="../image/LogoSPSS-removebg.png"
+                    )
+                div(class="page_control")
+                  button prev
+                  span.page-number 1 of 30
+                  button next
+    footer.footer
+      .footer-logo
+        img(
+          alt="Logo" 
+          src="../image/01_logobachkhoatoi.png"
+          )
+      .footer-contact
+        p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+        p
+          | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+          |   Dương
+        p Email: contact@website.com
+        p Điện thoại: +84 123 456 789
+      .footer-copyright
+        p © Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM

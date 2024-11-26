@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="print_setting.css" />
-    <title>Print Setting</title>
+    <script src="print_setting.js" defer></script>
+    <title>Cài đặt In</title>
   </head>
 
   <body>
@@ -15,10 +16,10 @@
         <img src="Pictures/LogoSPSS-removebg.png" alt="" />
 
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html">Service</a></li>
-          <li><a href="admin_manage_printer.html">All machines</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="index.html">Dịch vụ</a></li>
+          <li><a href="admin_manage_printer.html">Các máy in</a></li>
+          <li><a href="#">Liên hệ</a></li>
           <li><a href="#">Home</a></li>
           <li id="account">
             <a href="#"><i class="bx bx-user"></i></a>
@@ -38,6 +39,116 @@
         <div class="cards">
 
         <div class="content-2">
+
+
+
+          <div class="setting-selection">
+            <div class="title">
+              <h2>Cài đặt</h2>
+            </div>
+            
+            
+            <div >
+              <form id="uploadFileForm" >
+                <div class="file-upload-section" >
+                  <h3 >Chọn tệp tải lên:</h3>
+                  <input
+                    type="file"
+                    id="fileInput"
+                    name="file"
+                  />
+                  <button
+                    type="button"
+                    id="uploadFileButton"
+                  >
+                    Upload File
+                  </button>
+                  <p
+                    id="fileStatus"
+                  >
+                    Chưa tải tệp.
+                  </p>
+                </div>
+              </form>
+            </div>
+            
+            
+            
+            
+
+            <form id="printForm">
+              <!-- <div class="file-upload-section">
+                <h3>Chọn tệp tải lên:</h3>
+                <input type="file" id="fileInput" name="file" />
+              </div> -->
+            
+              <div class="printer-section">
+                <h3>Printer</h3>
+                <div class="printer-dropdown">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="printer">
+                    <option value="default" selected>Chọn máy in (Mặc định)</option>
+                    <option value="location1">Vị trí 1</option>
+                    <option value="location2">Vị trí 2</option>
+                  </select>
+                </div>
+              </div>
+            
+              <div class="page-section">
+                <h3>Copies:</h3>
+                <input type="number" placeholder="Nhập số bản cần in" name="copies" value="1" />
+              </div>
+            
+              <div class="settings-section">
+                <h3>Cài đặt:</h3>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="duplex">
+                    <option value="default" selected>Chọn kiểu in (Mặc định)</option>
+                    <option value="2-sided">In 2 mặt</option>
+                    <option value="1-sided">In 1 mặt</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="paperType">
+                    <option value="default" selected>Chọn loại giấy (Mặc định)</option>
+                    <option value="A3">Giấy A3</option>
+                    <option value="A4">Giấy A4</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="collation">
+                    <option value="default" selected>Chọn kiểu Collated (Mặc định)</option>
+                    <option value="collated">Collated</option>
+                    <option value="uncollated">Uncollated</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="orientation">
+                    <option value="default" selected>Chọn kiểu hướng giấy (Mặc định)</option>
+                    <option value="portrait">Portrait Orientation</option>
+                    <option value="landscape">Landscape Orientation</option>
+                  </select>
+                </div>
+                <div class="setting-option">
+                  <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
+                  <select name="paperSize">
+                    <option value="default" selected>Chọn kích cỡ giấy (Mặc định)</option>
+                    <option value="letter">Letter</option>
+                    <option value="legal">Legal</option>
+                  </select>
+                </div>
+            
+                <div class="submit-section">
+                  <button type="submit" id="submitButton">In</button>
+                </div>
+                
+              </div>
+            </form>
+          </div>
           <div class="print_setting">
             <div class="title">
               <h2>REPORT.PDF</h2>
@@ -52,66 +163,6 @@
                 <button> next</button>
             </div>
             
-          </div>
-
-
-          <div class="setting-selection">
-            <div class="title">
-              <h2>Setting</h2>
-            </div>
-            
-            <div class="file-upload-section">
-              <h3>Choose File:</h3>
-              <input type="file" id="fileInput" />
-            </div>
-
-            <div class="printer-section">
-                <h3>Printer</h3>
-                <div class="printer-dropdown">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Location</option>
-                        <option>Status</option>
-                    </select>
-                </div>
-            </div>
-        
-
-            <div class="page-section">
-                <h3>Copies:</h3>
-                <input type="text" placeholder="Nhập số bản cần in" />
-            </div>
-
-            <div class="settings-section">
-                <h3>Settings:</h3>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>In 2 mặt</option>
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Loại giấy</option>
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Setting 3</option>
-                    </select>
-                </div>
-                <div class="setting-option">
-                    <img src="./Pictures/edit.png" alt="Printer Icon" class="icon" />
-                    <select>
-                        <option>Setting 4</option>
-                    </select>
-                </div>
-
-                <div class="submit-section">
-                  <button type="submit" id="submitButton">Submit</button>
-                </div>
           </div>
         </div>
       </div>

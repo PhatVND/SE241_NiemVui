@@ -65,7 +65,6 @@ if (typeof pdfUrl !== "undefined" && pdfUrl) {
     pdfDoc = pdfDoc_;
     document.querySelector("#page-count").textContent = pdfDoc.numPages;
 
-    // Render the first page
     renderPage(pageNum);
   });
 }

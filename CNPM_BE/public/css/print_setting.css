@@ -55,6 +55,8 @@ body {
     flex-direction: column;
     min-height: 100vh; /* Chiều cao tối thiểu là 100% màn hình */
     margin: 0;
+    background-color: #222; /* Màu nền tối */
+    color: white; /* Màu chữ trắng */
     
 }
 a {
@@ -194,6 +196,7 @@ td {
     margin: 0 50px 50px 50px;
     display: flex;
     flex-direction: column;
+    background-color: #222;
 }
 .container .content .content-2 .page-preview  {
     width: 80%; 
@@ -202,7 +205,7 @@ td {
     margin-top: 10px; 
     margin-bottom: 10px;
     padding: 20px; /* Add padding around the content */
-    background-color: #fff; /* Background color for the page */
+    background-color: #222; /* Background color for the page */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow to make it look like a real page */
     
     overflow-y: auto; /* Add vertical scroll if content is too large */
@@ -279,6 +282,63 @@ td {
     margin-bottom: 10px;
 }
 
+.file-upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    margin: 20px 0; /* Khoảng cách trên dưới */
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
+  }
+  
+  /* Kiểu dáng cho nút "Upload File" */
+  #uploadFileButton {
+    background: linear-gradient(135deg, #04a6d8, #0284a1); /* Hiệu ứng gradient */
+    color: white; /* Màu chữ trắng */
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px; /* Kích thước nút */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Hiệu ứng chuyển đổi khi hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng nút */
+  }
+  #uploadFileButton:hover {
+    background: linear-gradient(135deg, #0284a1, #04a6d8); /* Đổi gradient khi hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Tăng bóng khi hover */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+  }
+  
+  #uploadFileButton:active {
+    background: #02677b; /* Màu tối hơn khi nhấn */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2) inset; /* Hiệu ứng ấn vào */
+    transform: translateY(2px); /* Nhấn xuống */
+  }
+  
+  /* Kiểu dáng cho input file */
+  #fileInput {
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
+    color: white; /* Màu chữ */
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  #fileInput:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Sáng hơn khi hover */
+  }
+  
+  #fileInput:focus {
+    outline: none;
+    border-color: #04a6d8; /* Đổi màu khi focus */
+  }
 /* Printer section styling
 .printer-section, .page-section, .settings-section {
     margin-bottom: 20px;
@@ -288,12 +348,123 @@ td {
 .printer-dropdown, .setting-option {
     display: flex;
     align-items: center;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
+    background-color: #fff;
+    border: 1px solid #222;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
+    
 }
+.printer-section,
+.page-section,
+.settings-section {
+  margin-bottom: 20px; /* Khoảng cách giữa các mục */
+  padding: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Viền nhẹ */
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
+  color: white; /* Màu chữ */
+}
+
+/* Tiêu đề (h3) của mỗi section */
+.printer-section h3,
+.page-section h3,
+.settings-section h3 {
+  font-size: 18px;
+  color: #04a6d8; /* Màu xanh nổi bật */
+  margin-bottom: 10px;
+}
+
+/* Dropdown và input styling */
+.printer-dropdown,
+.setting-option {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+/* Icon styling */
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+/* Dropdown select styling */
+select {
+  border: none;
+  background: none;
+  font-size: 14px;
+  flex-grow: 1;
+  color: #333; /* Màu chữ của dropdown */
+  cursor: pointer; /* Hiệu ứng chuột */
+  padding: 5px;
+}
+/* Dropdown hover và focus */
+select:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền sáng hơn khi hover */
+  }
+  
+  select:focus {
+    outline: none;
+    border: 1px solid #04a6d8; /* Viền xanh khi focus */
+  }
+  
+  /* Input styling cho phần Copies */
+  .page-section input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Nền trong suốt nhẹ */
+    color: white; /* Màu chữ */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover và focus cho input */
+  .page-section input:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Sáng hơn khi hover */
+  }
+  
+  .page-section input:focus {
+    outline: none;
+    border: 1px solid #04a6d8; /* Viền xanh khi focus */
+  }
+  
+  /* Submit button styling */
+  .submit-section button {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, #04a6d8, #0284a1); /* Gradient xanh */
+    color: white; /* Màu chữ */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Hover và active cho nút submit */
+  .submit-section button:hover {
+    background: linear-gradient(135deg, #0284a1, #04a6d8); /* Đổi gradient */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); /* Tăng đổ bóng */
+    transform: translateY(-2px); /* Hiệu ứng nổi lên */
+  }
+  
+  .submit-section button:active {
+    background: #02677b; /* Màu tối hơn khi nhấn */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2) inset; /* Hiệu ứng ấn xuống */
+    transform: translateY(2px); /* Ấn xuống */
+  }
 
 /* Icon styling */
 .icon {
@@ -327,6 +498,52 @@ select {
     margin-top: 8px ;
 
 }
+.page_control {
+    display: flex;
+    justify-content: center; /* Căn giữa các nút và số trang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các phần tử */
+    margin-top: 15px;
+    padding: 10px;
+  }
+  .page_control button {
+    background: linear-gradient(135deg, #04a6d8, #0284a1);
+    color: white; 
+    border: none; 
+    border-radius: 8px; 
+    padding: 10px 15px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: all 0.3s ease; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  }
+  
+
+  .page_control button:hover {
+    background: linear-gradient(135deg, #0284a1, #04a6d8); 
+    transform: translateY(-2px); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3); 
+  }
+  .page_control button:active {
+    background: #02677b; 
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2) inset; 
+    transform: translateY(2px); 
+  }
+  
+  /* Số trang (page-number) */
+  .page_control .page-number {
+    font-size: 14px; 
+    font-weight: bold; 
+    color: #04a6d8; 
+    padding: 8px 15px; 
+    border: 1px solid #04a6d8; 
+    border-radius: 8px; 
+    background-color: rgba(255, 255, 255, 0.1); 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    text-align: center; 
+  }
+    
 
 
 .footer {
@@ -335,8 +552,8 @@ select {
     text-align: center;
     padding: 80px 0;
     width: 100%;
-    position: relative; /* Đảm bảo không bị ảnh hưởng bởi các thành phần khác */
-    z-index: 1; /* Đảm bảo footer nằm phía trên mọi nội dung khác */
+    position: relative; 
+    z-index: 1; 
   }
   
   .footer-logo img {

@@ -1,0 +1,96 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title Print History
+    link(
+      href="print-history.css" 
+      rel="stylesheet"
+      )
+    link(
+      referrerpolicy="no-referrer" 
+      crossorigin="anonymous" 
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+      rel="stylesheet"
+      )
+    link(
+      rel="stylesheet" 
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      )
+    link(
+      crossorigin="anonymous" 
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+      rel="stylesheet"
+      )
+    link(
+      href="admin_setup.css" 
+      rel="stylesheet"
+      )
+  body
+    .banner
+      .navbar
+        img(
+          alt="" 
+          src="Pictures/LogoSPSS-removebg.png"
+          )
+        ul
+          li
+            a(href="index.html") Home
+          li
+            a(href="index.html") Service
+          li
+            a(href="admin_manage_printer.html") All machines
+          li
+            a(href="#") Contact
+          li
+            a(href="#") Home
+          li#account
+            a(href="#")
+              i.bx.bx-user
+      .container
+        h2 Thiết Lập Số Trang In
+        form#defaultPageForm
+          label(for="pageCount") Số trang in mặc định:
+          input#pageCount(
+            required="" 
+            min="1" 
+            type="number"
+            )
+          button(
+            onclick="submitForm()" 
+            type="button"
+            ) Lưu Thiết Lập
+        p#resultMessage
+      footer.footer
+        .footer-logo
+          img(
+            alt="Logo" 
+            src="Pictures/01_logobachkhoatoi.png"
+            )
+        .footer-contact
+          p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+          p
+            | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+            |   Dương
+          p Email: contact@website.com
+          p Điện thoại: +84 123 456 789
+        .footer-copyright
+          p © Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+      script(
+        crossorigin="anonymous" 
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+        src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        )
+      script(
+        crossorigin="anonymous" 
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" 
+        src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        )
+      script(src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js")
+      script(src="admin_setup.js")

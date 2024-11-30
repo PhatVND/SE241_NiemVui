@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    
+}
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(Pictures/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.navbar img {
+    width:150px;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+.navbar ul li a {
+   text-decoration: none;
+   color: white;    
+   text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width: 0%;
+    background: #04a6d8;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+body {
+    min-height: 100vh;
+    
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+h1,
+h2 {
+    color: white;
+}
+h3 {
+    color: whitesmoke;
+}
+.btn {
+    background: #222;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+}
+.btn:hover {
+    color: black;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #222;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+table {
+    padding: 10px;
+}
+th,
+td {
+    text-align: left;
+    padding: 20px;
+}
+
+.container .header .nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #222;
+}
+.search {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+}
+.search input[type=text] {
+    border: none;
+    background: #222;
+    padding: 10px;
+    width: 50%;
+}
+.search button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.search button img {
+    width: 30px;
+    height: 30px;
+}
+.container .header .nav .user {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.container .header .nav .user img {
+    width: 40px;
+    height: 40px;
+}
+.container .header .nav .user .img-case {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+.container .header .nav .user .img-case img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.container .content {
+    position: relative;
+    margin-top: 0vh;
+    min-height: 90vh;
+    background-image: url(Pictures/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container .content .cards {
+    padding: 20px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container .content .content-2 {
+    min-height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    
+}
+.container .content .content-2 .print-history {
+    min-height: 50vh;
+    min-width: 100vh;
+    flex: 5;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 0 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.container .content .content-2 .new-students {
+    flex: 2;
+    min-height: 50vh;
+    min-width: 70vh;
+    backdrop-filter: blur(10px);
+    margin: 0 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    display: flex;
+    flex-direction: column;
+}
+
+.print-history th {
+    color: #adadad;
+}
+.print-history td {
+    color: #adadad;
+}
+
+.new-students th {
+    color: #adadad;
+}
+.new-students td {
+    color: white;
+}
+.Printers td a {
+    margin: 0 2px;
+    color: white
+}
+.new-students td a img {
+    height: 30px;
+    width: 20px;
+}
+.container .content .content-2 .new-students table td:nth-child(1) img {
+    height: 40px;
+    width: 40px;
+}
+@media screen and (max-width: 1050px) {
+    .side-menu li {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 940px) {
+    .side-menu li span {
+        display: none;
+    }
+    .side-menu {
+        align-items: center;
+    }
+    .side-menu li img {
+        width: 40px;
+        height: 40px;
+    }
+    .side-menu li:hover {
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+@media screen and (max-width:536px) {
+    .brand-name h1 {
+        font-size: 16px;
+    }
+    .container .content .cards {
+        justify-content: center;
+    }
+    .side-menu li img {
+        width: 30px;
+        height: 30px;
+    }
+    .container .content .content-2 .print-history table th:nth-child(2),
+    .container .content .content-2 .print-history table td:nth-child(2) {
+        display: none;
+    }
+}
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-contact p, 
+.footer-copyright p {
+    margin: 10px 0;
+}

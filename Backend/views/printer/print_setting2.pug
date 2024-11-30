@@ -1,0 +1,245 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="IE=edge" 
+      http-equiv="X-UA-Compatible"
+      )
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    link(
+      href="/css/print_setting2.css" 
+      rel="stylesheet"
+      )
+    link(
+      rel="stylesheet" 
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      )
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js")
+    title Cài đặt In
+  body
+    .banner
+      .navbar
+        img(
+          alt="" 
+          src="../image/LogoSPSS-removebg.png"
+          )
+        ul
+          li
+            a(href="/") Trang chủ
+          li
+            a(href="/") Dịch vụ
+          li
+            a(href="#") Liên hệ
+          li
+            a(href="#") Home
+          li#account
+            a(href="#")
+              i.bx.bx-user
+      .container
+        //
+          <div class="header">
+           <div class="nav">
+           <h2>Cài đặt trang in</h2>
+           </div>
+           </div>
+        .content
+          .cards
+            .content-2
+              .setting-selection
+                .title
+                  h2 Cài đặt
+                div
+                  form#uploadFileForm(action="/print" method="POST" enctype="multipart/form-data")
+                    .file-upload-section
+                      h3 Chọn tệp tải lên:
+                      input#fileInput(
+                        type='file' name='pdf' accept=".pdf"
+                        )
+                      button#uploadFileButton(type='submit') Upload File
+                      p#fileStatus #{uploadStatus} #{name}.
+                form#printForm(action="/print/addHistory", method ="post", required=isRequired)
+                  //
+                    <div class="file-upload-section">
+                     <h3>Chọn tệp tải lên:</h3>
+                     <input type="file" id="fileInput" name="file" />
+                     </div>
+                  .printer-section
+                    h3 Printer
+                    .printer-dropdown
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="printer" id= "printer" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn máy in (Mặc định)
+                        each item in printer
+                          option(value=item.id) #{item.Name} #{item.Location}
+                  .page-section
+                    h3 Số dư:
+                    input(type='number' id='balance'  placeholder = balance  name='balance' value = balance readonly )      
+                  .page-section
+                    h3 Tên tệp: 
+                    input(type='text' id='filename' placeholder = name name='filename' value = name readonly required )
+                    h3 Pages: 
+                    input(type='text' id='pages' placeholder = 'nhập theo định dang <trang đầu - trang cuối>' name='pages' required)
+                    h3 In chẵn lẻ:
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="oddOrEven" id= "oddOrEven" )
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn kiểu in (Mặc định)
+                        option(value="1") In trang chẵn
+                        option(value="2") In trang lẻ
+                    h3 Copies:
+                    input(
+                      id = "copies"
+                      value="1" 
+                      name="copies" 
+                      placeholder="Nhập số bản cần in" 
+                      type="number"
+                      required
+                      )
+                  .settings-section
+                    h3 Cài đặt:
+
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="duplex" id="duplex" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn kiểu in (Mặc định)
+                        option(value="2-sided") In 2 mặt
+                        option(value="1-sided") In 1 mặt
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="paperType" id="paperType" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn loại giấy (Mặc định)
+                        option(value="A3") Giấy A3
+                        option(value="A4") Giấy A4
+                        option(value="A5") Giấy A5
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="collation" id="collation" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn kiểu Collated (Mặc định)
+                        option(value="collated") Collated
+                        option(value="uncollated") Uncollated
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(id='orientation-select' name="orientation" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn kiểu hướng giấy (Mặc định)
+                        option(value="portrait") Portrait Orientation
+                        option(value="landscape") Landscape Orientation
+                    .setting-option
+                      img.icon(
+                        alt="Printer Icon" 
+                        src="/image/edit.png"
+                        )
+                      select(name="paperSize" id="paperSize" required)
+                        option(
+                          selected="" 
+                          value="default"
+                          ) Chọn kích cỡ giấy (Mặc định)
+                        option(value="letter") Letter
+                        option(value="legal") Legal
+                    .page-section
+                      h3 Tổng tiền phải trả:
+                      input(type='number' id='totalMoney' name='totalMoney' readonly  )
+                    .submit-section
+                      button(id= "submitButton") In
+              div(class="print_setting")
+                .title
+                  h2 #{name}
+                .page-preview
+                  if pdfUrl
+                    canvas#pdf-render
+                      script. 
+                        const pdfUrl = "#{pdfUrl}";
+                div(class="page_control")
+                  button#prev-page  prev
+                  span.page-number
+                    span#page-info
+                      | Page
+                      span#page-num
+                      | of
+                      span#page-count
+                  button#next-page  next
+            script(src="/js/displayPdf.js")
+    footer.footer
+      .footer-logo
+        img(
+          alt="Logo" 
+          src="/image/01_logobachkhoatoi.png"
+          )
+      .footer-contact
+        p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+        p
+          | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+          |   Dương
+        p Email: contact@website.com
+        p Điện thoại: +84 123 456 789
+      .footer-copyright
+        p © Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+          script(
+        src="/js/print_setting.js"
+        )
+      script(src="/js/handlePrinting.js") 
+    // // Script pop up Login
+    script.
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+      }
+
+      // Kiểm tra trạng thái cookie và xử lý sự kiện
+      document.getElementById("account").addEventListener("click", function () {
+        const refreshToken = getCookie("refreshToken"); // Lấy cookie "refreshToken"
+
+        if (refreshToken) {
+          // Nếu cookie tồn tại, chuyển hướng đến /user/info
+          window.location.href = "/user/info";
+        } else {
+          // Nếu không có cookie, hiển thị popup đăng nhập
+          document.querySelector(".popup").style.display = "flex";
+        }
+      });
+
+      // Đóng popup khi người dùng bấm nút "close"
+      document.querySelector(".close")?.addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+      });

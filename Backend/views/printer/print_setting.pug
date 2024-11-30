@@ -1,0 +1,144 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet" href="/css/print_setting.css")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js") 
+        title Print Setting 
+    body
+        div.banner
+            div.navbar
+                img(src="/image/LogoSPSS-removebg.png" alt="")
+                ul
+                    li
+                        a(href="index.html") Home
+                    li
+                        a(href="index.html") Service
+                    li
+                        a(href="admin_manage_printer.html") All machines
+                    li
+                        a(href="#") Contact
+                    li
+                        a(href="#") Home
+                    li#account
+                        a(href="#")
+                            i(class="bx bx-user")
+            div.container
+                // div.header
+                //     div.nav
+                //         h2 Cài đặt trang in
+                div.content
+                    div.cards
+                        div.content-2     
+                            div.setting-selection
+                                div.title
+                                    h2 Setting
+                                div.file-upload-section
+                                    h3 Choose File:
+                                    form#upload-form(action="/print" method="POST" enctype="multipart/form-data")
+                                        input#file-input(type="file" name="pdf" accept=".pdf")
+                                        button(type="submit") Upload
+                                div.printer-section
+                                    h3 Printer
+                                    div.printer-dropdown
+                                        img(src="/image/edit.png" alt="Printer Icon" class="icon")
+                                        select
+                                            -var i = 0;
+                                            each item in printer
+                                                option #{item.Name}
+                                div.page-section
+                                    h3 Copies:
+                                    input(type="text" placeholder="Nhập số bản cần in")
+                                div.settings-section
+                                    h3 Settings:
+                                    div.setting-option
+                                        img(src="/image/edit.png" alt="Printer Icon" class="icon")
+                                        select
+                                            option In 1 mặt
+                                            option In 2 mặt
+                                    div.setting-option
+                                        img(src="/image/edit.png" alt="Printer Icon" class="icon")
+                                        select
+                                            each item in pageSize 
+                                                option #{item.pageSize}
+                                    div.setting-option
+                                        img(src="/image/edit.png" alt="Printer Icon" class="icon")
+                                        select
+                                            option Setting 3
+                                    div.setting-option
+                                        img(src="/image/edit.png" alt="Printer Icon" class="icon")
+                                        select
+                                            option Setting 4
+                                    div.submit-section
+                                        button(type="submit" id="submitButton") Submit
+                            div.print_setting
+                                div.title
+                                    h2 REPORT.PDF
+                                div.page-preview
+                                    h2 REPORT.PDF
+                                    if pdfUrl
+                                        canvas#pdf-render
+                                            script.
+                                                const pdfUrl = "#{pdfUrl}";
+                                div.page_control
+                                    button#prev-page Previous
+                                    span.page-number
+                                        span#page-info
+                                            | Page 
+                                            span#page-num 
+                                            | of 
+                                            span#page-count
+                                    button#next-page Next
+                                //- script(src="/js/displayPdf.js") 
+                                //- div.page_control
+                                //-     button(id = "prev-page") prev
+                                //-     span#page-info 
+                                //-         | Page 
+                                //-         span#page-num 
+                                //-         | of 
+                                //-         span#page-count
+                                //-     button#next-page Next            
+    script(src="/js/displayPdf.js") 
+    footer.footer
+        div.footer-logo
+            img(src="/image/01_logobachkhoatoi.png" alt="Logo")
+        div.footer-contact
+            p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+            p Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình Dương
+            p Email: contact@website.com
+            p Điện thoại: +84 123 456 789
+        div.footer-copyright
+            p &copy; Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+
+
+
+//- doctype html
+//- html
+//-   head
+//-     meta(charset="UTF-8")
+//-     meta(name="viewport" content="width=device-width, initial-scale=1.0")
+//-     title PDF Viewer
+//-     script(src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js")
+//-     link(rel="stylesheet" href="/css/style.css")
+//-   body
+//-     div#pdf-container
+//-       h1 PDF Viewer
+//-       form#upload-form(action="/print/upload" method="POST" enctype="multipart/form-data")
+//-         input#file-input(type="file" name="pdf" accept=".pdf")
+//-         button(type="submit") Upload
+//-       if pdfUrl
+//-         canvas#pdf-render
+//-         div#controls
+//-           button#prev-page Previous
+//-           span#page-info
+//-             | Page 
+//-             span#page-num 
+//-             | of 
+//-             span#page-count
+//-           button#next-page Next
+//-         script.
+//-           const pdfUrl = "#{pdfUrl}";
+//-     script(src="/js/displayPdf.js")
+

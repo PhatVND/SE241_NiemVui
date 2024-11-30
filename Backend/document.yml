@@ -1,0 +1,120 @@
+openapi: 3.0.3
+info:
+  title: Document API
+  description: |-
+    Đây là tài liệu mô tả API và các schema của object cho project này
+    Để xem tài liệu, bạn có thể sử dụng plugin hỗ trợ OpenAPI trên các IDE hoặc copy toàn bộ và dán vào [đây](https://editor.swagger.io/).
+  version: 1.0.0
+servers:
+  - url: http://localhost:8088/api/v1
+tags:
+  - name: users
+    description: Operations about users
+paths:
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: Đăng nhập
+      description: Người dùng đăng nhập vào ứng dụng
+      operationId: login
+      requestBody:
+        description: Thông tin đăng nhập
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserLogin'
+
+        required: true
+      responses:
+        '200':
+          description: 'Đăng nhập thành công.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  accessToken:
+                    type: string
+                    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjQ5ODRkNjY5YThjZmQwMTRmYjViZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTczMDQ1NDAzMCwiZXhwIjoxNzMwNDU0MzMwfQ.Pi3BYKtuUAP2dbcjCDoolbOnCfsHYekwj5w88zSQPts'
+                    description: 'Mã thông báo truy cập (Access Token).'
+                  refreshToken:
+                    type: string
+                    example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3MjQ5ODRkNjY5YThjZmQwMTRmYjViZiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTczMDQ1NDAzMCwiZXhwIjoxNzMwNDU0MzMwfQ.Pi3BYKtuUAP2dbcjCDoolbOnCfsHYekwj5w88zSQPts'
+                    description: 'Mã thông báo làm mới (Refresh Token).'
+  /add/user:
+    post:
+      tags:
+        - admin
+      summary: 'Thêm người dùng mới (cần xác thực)'
+      security:
+        - jwt: [] # Chỉ định rằng cần có JWT để truy cập endpoint này
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: 'Người dùng đã được thêm thành công.'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 'User registered successfully' # Thông điệp thành công
+                  username:
+                    type: string
+                    example: 'John Doe2' # Tên người dùng mới được thêm
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        username:
+          type: string
+          minLength: 5
+          description: 'Tên người dùng, phải có ít nhất 5 ký tự.'
+        email:
+          type: string
+          format: email
+          description: 'Địa chỉ email, phải là duy nhất.'
+        password:
+          type: string
+          description: 'Mật khẩu của người dùng.'
+        years:
+          type: integer
+          minimum: 1
+          maximum: 8
+          description: 'Số năm, phải nằm trong khoảng từ 1 đến 8.'
+        role:
+          type: string
+          enum: [USER, ADMIN]
+          default: USER
+          description: 'Vai trò của người dùng, có thể là ADMIN hoặc USER.'
+      required:
+        - username
+        - email
+        - password
+        - years
+        - role
+    UserLogin:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          description: 'Địa chỉ email, phải là duy nhất.'
+        password:
+          type: string
+          description: 'Mật khẩu của người dùng.'
+
+  securitySchemes:
+    jwt:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

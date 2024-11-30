@@ -1,0 +1,129 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel="stylesheet" href="/css/print_setting.css")
+  script(src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js")
+  script(src='/js/print_setting.js' defer='')
+  title C&agrave;i &dstrok;&#x1EB7;t In
+.banner
+  .navbar
+    img(src='Pictures/LogoSPSS-removebg.png' alt='')
+    ul
+      li
+        a(href='index.html') Trang chủ;
+      li
+        a(href='index.html') Dịch vụ;
+      li
+        a(href='admin_manage_printer.html') Các máy in
+      li
+        a(href='#') Liên hệ;
+      li
+        a(href='#') Home
+      li#account
+        a(href='#')
+          i.bx.bx-user
+  .container
+    .content
+      .cards
+        .content-2
+          .setting-selection
+            .title
+              h2 Cài đặt
+            div
+              form#uploadFileForm(action="/print" method="POST" enctype="multipart/form-data")
+                .file-upload-section
+                  h3 Chọn tệp tải lên:
+                  input#fileInput(type='file' name='pdf' accept=".pdf" )
+                  button#uploadFileButton(type='submit')
+                    | Upload File
+                  p#fileStatus
+                    | #{uploadStatus} #{name}.
+            form(action="/print/addHistory", method ="post", required=isRequired)#printForm
+              //
+                <div class="file-upload-section">
+                <h3>Chọn tệp tải lên:</h3>
+                <input type="file" id="fileInput" name="file" />
+                </div>
+              .printer-section
+                h3 Printer
+                .printer-dropdown
+                  img.icon(src='./Pictures/edit.png' alt='Printer Icon')
+                  select(name='printer', required=isRequired)
+                    option(value='default' selected='') Chọn máy in (Mặc định)
+                    each item in printer
+                      option(value=item.id) #{item.Name} #{item.Location}
+              .page-section
+                h3 Tên tệp: 
+                input(type='text' placeholder = name name='filename' value = name )
+                h3 Pages: 
+                input(type='text' placeholder = 'nhập theo định dang <trang đầu - trang cuối>' name='pages' ,required=isRequired )
+                h3 Copies:
+                input(type='number' placeholder='Nhập số bản cần in' name='copies' value='1',required=isRequired)
+              .settings-section
+                h3 Cài đặt:
+                .setting-option
+                  img.icon(src='./Pictures/edit.png' alt='Printer Icon')
+                  select(name='duplex', required=isRequired)
+                    option(value='default' selected='') Chọn kiểu in (Mặc định)
+                    option(value='2-sided') In 2 mặt
+                    option(value='1-sided') In 1 mặt
+                .setting-option
+                  img.icon(src='./Pictures/edit.png' alt='Printer Icon')
+                  select(name='paperType',required=isRequired)
+                    option(value='default' selected='') Chọn loại giấy (Mặc định):
+                    option(value='A3') Giay A3
+                    option(value='A4') Giay A4
+                .setting-option
+                  img.icon(src='./Pictures/edit.png' alt='Printer Icon')
+                  select(name='collation',required=isRequired)
+                    option(value='default' selected='') Chọn kiểu Collated (M&#x1EB7;c &dstrok;&#x1ECB;nh)
+                    option(value='collated') Collated
+                    option(value='uncollated') Uncollated
+                .setting-option
+                  img.icon(src='./image/edit.png' alt='Printer Icon')
+                  select(name='orientation',required=isRequired)
+                    option(value='default' selected='') Chọn kiểu hướng giấy (Mặc định)
+                    option(value='portrait') Portrait Orientation
+                    option(value='landscape') Landscape Orientation
+                .setting-option
+                  img.icon(src='./Pictures/edit.png' alt='Printer Icon')
+                  select(name='paperSize',required=isRequired)
+                    option(value='default' selected='') Chọn kích cỡ giấy (Mặc định)
+                    option(value='letter') Letter
+                    option(value='legal') Legal
+                .submit-section
+                  button#submitButton(type='submit') In
+          .print_setting
+            .title
+              h2 REPORT.PDF
+            .page-preview
+              h2 REPORT.PDF
+              if pdfUrl
+                canvas#pdf-render
+                  script. 
+                    const pdfUrl = "#{pdfUrl}";
+            .page_control
+              button#prev-page  prev
+              span.page-number
+                span#page-info
+                  | Page 
+                  span#page-num 
+                  | of
+                  span#page-count
+              button#next-page  next
+        script(src="/js/displayPdf.js")
+footer.footer
+  .footer-logo
+    img(src='Pictures/01_logobachkhoatoi.png' alt='Logo')
+  .footer-contact
+    p
+      | Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+    p
+      | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+      | Dương
+    p Email: contact@website.com
+    p Điện thoại: +84 123 456 789
+  .footer-copyright
+    p &copy; Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM

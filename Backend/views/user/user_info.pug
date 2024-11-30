@@ -1,0 +1,161 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    title HCMUT Smart Printing Service
+    link(
+      href="/css/user_info.css" 
+      rel="stylesheet"
+      )
+    link(
+      href="/css/user_info2.css" 
+      rel="stylesheet"
+      )
+    link(
+      rel="stylesheet" 
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      )
+    link(
+      rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+      )
+  body
+    .banner
+      .navbar
+        img(
+          alt="" 
+          src="/image/LogoSPSS-removebg.png"
+          )
+        ul
+          li
+            a(href="/") Trang chủ
+          li
+            a(href="/") Dịch vụ
+
+          li
+            a(href="#") Liên hệ
+          li
+            a(href="#") Home
+          li#account
+            a(href="#")
+              i.bx.bx-user
+      .container.light-style.flex-grow-1.container-p-y
+        h4.font-weight-bold.py-3.mb-4 Cài đặt cá nhân
+        .card.overflow-hidden
+          .row.no-gutters.row-bordered.row-border-light
+            .col-md-3.pt-0
+              .list-group.list-group-flush.account-settings-links
+                a.list-group-item.list-group-item-action.active(
+                  href="#account-general" 
+                  data-toggle="list"
+                  ) Chung
+                a.list-group-item.list-group-item-action(
+                  href="#account-change-password" 
+                  data-toggle="list"
+                  ) Đổi mật khẩu
+                a.list-group-item.list-group-item-action(href="/user/history") Lịch sử in
+                a.list-group-item.list-group-item-action(href="/user/buy-pages") Mua thêm giấy in
+                a.list-group-item.list-group-item-action(href="/auth/logout") Đăng xuất
+            .col-md-9
+              .tab-content
+                #account-general.tab-pane.fade.active.show
+                  .card-body.media.align-items-center
+                    img.d-block.ui-w-80(
+                      alt="" 
+                      src="https://bootdey.com/img/Content/avatar/avatar1.png"
+                      )
+                    .media-body.ml-4
+                      label.btn.btn-outline-primary
+                        | Tải ảnh mới
+                        input.account-settings-fileinput(type="file")
+                      button.btn.btn-outline-primary(type="button") Reset
+                      .text-light.small.mt-1 Các định dạng phù hợp: PNG, JPEG
+                  hr.border-light.m-0
+                  .card-body
+                    .form-group
+                      label.form-label Username
+                      input.form-control.mb-1(
+                        value="abc" 
+                        type="text"
+                        )
+                    .form-group
+                      label.form-label Họ và tên
+                      input.form-control(
+                        value="John Doe 7" 
+                        type="text"
+                        )
+                      .form-group
+                        label.form-label MSSV
+                        input.form-control(
+                          value="2212999." 
+                          type="text"
+                          )
+                    .form-group
+                      label.form-label E-mail
+                      input.form-control.mb-1(
+                        value="johndoe@example.com" 
+                        type="text"
+                        )
+                #account-change-password.tab-pane.fade
+                  .card-body.pb-2
+                    .form-group
+                      label.form-label Mật khẩu hiện tại
+                      input.form-control(type="password")
+                    .form-group
+                      label.form-label Mật khẩu mới
+                      input.form-control(type="password")
+                    .form-group
+                      label.form-label Nhập lại mật khẩu mới
+                      input.form-control(type="password")
+                #account-notifications.tab-pane.fade
+                  hr.border-light.m-0
+        .text-right.mt-3
+          button.btn.btn-primary(type="button") Lưu thay đổi
+          button.btn.btn-primary(type="button") Huỷ
+      script(
+        src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js" 
+        data-cfasync="false"
+        )
+      script(src="https://code.jquery.com/jquery-1.10.2.min.js")
+      script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js")
+      script(type="text/javascript")
+footer.footer
+  .footer-logo
+    img(
+      alt="Logo" 
+      src="/image/01_logobachkhoatoi.png"
+      )
+  .footer-contact
+    p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+    p
+      | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+      |   Dương
+    p Email: contact@website.com
+    p Điện thoại: +84 123 456 789
+  .footer-copyright
+    p © Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+script(src="script.js")
+script(src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js")
+script.
+  var typed = new Typed(".auto-type", {
+    strings: [
+    "I dont know what to write here... maybe will update it soon",
+    "I think I know now",
+    "Ehh nevermind",
+    ],
+    typeSpeed: 50,
+    backSpeed: 100,
+    loope: true,
+    });
+// // Script pop up Login
+script.
+  document.getElementById("account").addEventListener("click", function () {
+    document.querySelector(".popup").style.display = "flex";
+    });
+    document.querySelector(".close").addEventListener("click", function () {
+    document.querySelector(".popup").style.display = "none";
+    });

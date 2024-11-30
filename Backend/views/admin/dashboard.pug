@@ -1,0 +1,268 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(
+      content="IE=edge" 
+      http-equiv="X-UA-Compatible"
+      )
+    meta(
+      content="width=device-width, initial-scale=1.0" 
+      name="viewport"
+      )
+    link(
+      href="/css/admin_dashboard.css" 
+      rel="stylesheet"
+      )
+
+    link(
+      rel="stylesheet" 
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      )
+    title Admin Panel
+  body
+    .banner
+      .navbar
+        img(
+          alt="" 
+          src="/image/LogoSPSS-removebg.png"
+          )
+        ul
+          li
+            a(href="/") Trang chủ
+          li
+            a(href="/dashboard") Dashboard
+          li
+            a(href="/print") Các máy in
+          li
+            a(href="#") Cài đặt
+          li#account
+            a(href="#")
+              i.bx.bx-user
+      .container
+        .header
+          .nav
+        .content
+          .cards
+            .content-2
+              .print-history
+                .title
+                  h2 Lịch sử in ấn
+                  a.btn(href="#") Xem tất cả
+                table
+                  tbody
+                    tr
+                      th Mã in
+                      th Ngày in
+                      th Nơi thực hiện
+                      th Option
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+                    tr
+                      td 1111111
+                      td 25/02/2025
+                      td H1-104
+                      td
+                        a.btn(href="#") View
+              .new-students
+                .title
+                  h2 Thông tin người dùng
+                  a.btn(href="#") View All
+                table
+                  tbody
+                    tr
+                      th Profile
+                      th Email
+                      th Cài đặt
+                    tr
+                      td
+                        img(
+                          alt="" 
+                          src="/image/user.png"
+                          )
+                      td kujodino@hcmut.edu.vn
+                      td
+                        img(
+                          alt="" 
+                          src="info.png"
+                          )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="/image/edit.png"
+                            )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="/image/delete-svgrepo-com.svg"
+                            )
+                    tr
+                      td
+                        img(
+                          alt="" 
+                          src="Pictures/user.png"
+                          )
+                      td mafia@hcmut.edu.vn
+                      td
+                        img(
+                          alt="" 
+                          src="info.png"
+                          )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/edit.png"
+                            )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/delete-svgrepo-com.svg"
+                            )
+                    tr
+                      td
+                        img(
+                          alt="" 
+                          src="Pictures/user.png"
+                          )
+                      td phat.vonguyen@hcmut.edu.vn
+                      td
+                        img(
+                          alt="" 
+                          src="info.png"
+                          )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/edit.png"
+                            )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/delete-svgrepo-com.svg"
+                            )
+                    tr
+                      td
+                        img(
+                          alt="" 
+                          src="Pictures/user.png"
+                          )
+                      td yessir@hcmut.edu.vn
+                      td
+                        img(
+                          alt="" 
+                          src="info.png"
+                          )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/edit.png"
+                            )
+                      td
+                        a(href="#")
+                          img(
+                            a="" 
+                            <="" 
+                            alt="" 
+                            src="Pictures/delete-svgrepo-com.svg"
+                            )
+          .search
+            input(
+              placeholder="Search.." 
+              type="text"
+              )
+            button(type="submit")
+              a(href="#")
+                img(
+                  alt="" 
+                  src="/image/search.png"
+                  )
+    footer.footer
+      .footer-logo
+        img(
+          alt="Logo" 
+          src="/image/01_logobachkhoatoi.png"
+          )
+      .footer-contact
+        p Cơ sở Lý Thường Kiệt: 268 Lý Thường Kiệt, Phường 14, Quận 10, TP. HCM
+        p
+          | Cơ sở Dĩ An: Khu phố Tân Lập, Phường Đông Hòa, TP. Dĩ An, Tỉnh Bình
+          |   Dương
+        p Email: contact@website.com
+        p Điện thoại: +84 123 456 789
+      .footer-copyright
+        p © Bản quyền thuộc Trường Đại học Bách khoa - ĐHQG-HCM
+
+    script.
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
+        return null;
+      }
+
+      // Kiểm tra trạng thái cookie và xử lý sự kiện
+      document.getElementById("account").addEventListener("click", function () {
+        const refreshToken = getCookie("refreshToken"); // Lấy cookie "refreshToken"
+
+        if (refreshToken) {
+          // Nếu cookie tồn tại, chuyển hướng đến /user/info
+          window.location.href = "/user/info";
+        } else {
+          // Nếu không có cookie, hiển thị popup đăng nhập
+          document.querySelector(".popup").style.display = "flex";
+        }
+      });
+
+      // Đóng popup khi người dùng bấm nút "close"
+      document.querySelector(".close")?.addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+      });

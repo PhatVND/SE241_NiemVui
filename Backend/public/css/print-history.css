@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Freeman&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family:  sans-serif;
+    color: #fff
+}
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(/image/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(/image/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+.navbar img {
+    width:150px;
+}
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+
+}
+.navbar ul li a {
+   text-decoration: none;
+   color: white;    
+   text-transform: uppercase;
+
+}
+.navbar ul li::after{
+    content: '';
+    height:3px;
+    width: 0%;
+    background: #04a6d8;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+
+.footer {
+    margin-top: 80px;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: auto;
+}
+
+.footer-contact p, 
+.footer-copyright p {
+    margin: 10px 0;
+}
+
+.inner-main .inner-title {
+    font-size: 50px;
+    text-align: center;
+    font-family: "Freeman", sans-serif;
+    margin-bottom: 40px;
+}
+
+.inner-main .inner-content {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.inner-main .inner-content .inner-print-time {
+    border: 1px solid #fff;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 20px 10px 20px 10px;
+    line-height: 1.5;
+    padding-left: 20px;
+    margin: 15px;
+}
+
+.inner-main .inner-content .inner-print-time i {
+    margin-right: 10px;
+}
+
+.inner-main .inner-content .inner-print-time .inner-printId {
+    font-family: "Freeman", sans-serif;
+}
+
+.inner-main .inner-content .inner-print-time .inner-time {
+    font-family: "Freeman", sans-serif;
+}
+
+.inner-main .inner-content .inner-print-time .print{
+    font-family: "Freeman", sans-serif;
+}
+
+.inner-main .inner-content .inner-print-time .print-place{
+    font-family: "Freeman", sans-serif;
+}
+
+.inner-main .inner-content .inner-print-time .print-place i {
+    margin-right: 16px;
+}
+
+.inner-main .inner-content .inner-print-time .delete-history {
+    font-family: "Freeman", sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+.inner-sort {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inner-sort button {
+    margin-top: 0!important;
+    margin-left: 20px;
+}
+
+.inner-sort select option {
+    color: #000;
+    background-color: #e9e5e5;
+}
+
+.inner-sort select.form-control {
+    color: #000;
+    background-color: #e9e5e5;
+}
